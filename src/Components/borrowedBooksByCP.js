@@ -37,9 +37,10 @@ import React, {
       return this.uniqueId++
     }
   
-    componentDidMount() {
+    search() {
+      console.log(this.category,this.phone);
       const url =
-        "https://borrowed-books.herokuapp.com/getAllBooks";
+        "https://borrowed-books.herokuapp.com/getBooksByCategoryAndPhone/" + this.category.value + "/" + this.phone.value;
       fetch(url)
         .then((res) => {
           return res.json();
@@ -105,10 +106,33 @@ import React, {
   
     render() {
       return ( 
+        <div className='cont'>
+        <div className='form'>
+            <form onSubmit={e => {
+                e.preventDefault();
+                this.search()}
+            }>
+            <p>search boook by category and phone</p>
+            <label for='cat'>category</label>
+            <input ref={
+                (input) => {
+                    this.category = input;
+                }
+            } id='cat'/>
+            <label for='cat'>phone</label>
+            <input ref={
+                (input) => {
+                    this.phone = input;
+                }
+            } id='cat'/>
+            <button>search</button>
+            </form>
+        </div>
         <div className = "bookList" > {
-          this.state.books.map(this.eachBook)
+        this.state.books.map(this.eachBook)
         } 
         </div >
+    </div >
       )
     }
   }

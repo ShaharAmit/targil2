@@ -40,28 +40,10 @@ import React, {
   
     search() {
         const cat={};
-        cat.category = this.category;
-
-        var cache = [];
-        const stringifyed = JSON.stringify(cat, (key, value) => {
-            if (typeof value === 'object' && value !== null) {
-                if (cache.indexOf(value) !== -1) {
-                    // Duplicate reference found
-                    try {
-                        // If this value does not reference a parent it can be deduped
-                        return JSON.parse(JSON.stringify(value));
-                    } catch (error) {
-                        // discard key if value cannot be deduped
-                        return;
-                    }
-                }
-                // Store value in our collection
-                cache.push(value);
-            }
-            return value;
-        });
-        cache = null;
-
+        cat.category = this.category.value;
+        
+        const stringifyed = JSON.stringify(cat);
+        
         fetch(
         "https://borrowed-books.herokuapp.com/getBooksByCategory", {
             method: "POST",
