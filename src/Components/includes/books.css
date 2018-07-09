@@ -1,0 +1,22 @@
+.bookDetails, .bookData {
+    width: 40%;
+    margin: 20% 0 0 7%;
+    height: 55%;
+    flex: none;
+    display: inline-block;
+}
+
+p {
+    font-size: 1vw;
+    margin-bottom: 5px;
+}
+
+.bookData {
+    margin: 20% 0 0 9%;
+}
+
+.books {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}

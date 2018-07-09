@@ -1,0 +1,14 @@
+.headerCont {
+    width: 100%;
+    text-align: center;
+    background-color: #aaa;
+    padding: 10px 0 0 0;
+}
+
+h1 {
+    margin: 0 auto !important;
+}
+
+a {
+    font-size: 2rem;
+}

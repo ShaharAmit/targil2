@@ -1,0 +1,15 @@
+.card {
+    background: url('./openBook.png') no-repeat center top;
+    background-size: 95%;
+    border: none;
+    width: 19vw !important;
+    height: 19vw !important;
+    float: left;
+    margin: 1vw 0 0 1vw;
+}
+
+.buttonsCont {
+    align-content: center;
+    position: absolute;
+    bottom: 0;
+}
